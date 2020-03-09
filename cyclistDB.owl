@@ -1,0 +1,425 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/bertelt/ontologies/2019/8/untitled-ontology-4#"
+     xml:base="http://www.semanticweb.org/bertelt/ontologies/2019/8/untitled-ontology-4"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-4="http://www.semanticweb.org/bertelt/ontologies/2019/8/untitled-ontology-4#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Has_Rider -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Has_Rider">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rides_For"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rider"/>
+        <rdfs:comment>Relation from Team to Rider, where Team has Rider.
+Inverse of &quot;Rider_For&quot; relation.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rides_For -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rides_For">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rider"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Team"/>
+        <rdfs:comment>Relation from Rider to Team, where Rider rides for Team.
+Inverse relation of &quot;Has_Rider&quot;.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Sponsored_By -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Sponsored_By">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Sponsors"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Sponsor"/>
+        <rdfs:comment>Relation from Team to Sponsor, where Team Sponsored_By Sponsor.
+Inverse relation of  &quot;Sponsors&quot;.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Sponsors -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Sponsors">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Sponsor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Team"/>
+        <rdfs:comment>Relation from Sponsor to Team, where Sponsor Sponsors Team.
+Inverse relation of  &quot;Sponsored_By&quot;.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#BirthDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#BirthDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rider"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Property of the Rider class with a date in format yyy-mm-dd representing the date of birth as a string.
+Can be null.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#BirthPlace -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#BirthPlace">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rider"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Property of the Rider class with a string representing the place of birth.
+Can be null.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#RiderType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#RiderType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rider"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Genre of the Cyclists, property of the Rider class.
+Can be: sprinter, climber, tt, gc, classic or null.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#FullName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#FullName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rider"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Property for Rider class with a string that represents the full name.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#GivenName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#GivenName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rider"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The given name / first name of a Rider.
+Cannot be null.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Height -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Height">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rider"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment>Height property of the Rider class, with double value representing the height in m.
+Can be null.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Nationality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Nationality">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rider"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Team"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Property of the Rider class with a string that represents the nationality.
+Cannot be null.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Status -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Status">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Team"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Status property of the Team Class, which specifies if a team is a WorldTeam (WT), ProContinental (PCT), Continental (CT) or UCI Women (UCI) (not included in data set).
+Cannot be null.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Surname -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Surname">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rider"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Property of the Rider class with a string representing the surname.
+Cannot be null.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#UCI_rank -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#UCI_rank">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rider"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment>Property of Rider, with integer that represents the UCI rank.
+Can be null.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#URL -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#URL">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rider"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Sponsor"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Team"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>URL Property containing URL to DBpedia for all classes.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Weight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Weight">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rider"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment>Property of the Rider class with double representing the weight in kg.
+Can also be null.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#uciCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#uciCode">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Team"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Property of Team, that specifies the three letter string which represents a team.
+Cannot be null</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Bike_Sponsor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Bike_Sponsor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Sponsor"/>
+        <rdfs:comment>Bike Sponsor class that contains the Bike brands that sponsor Teams.
+Has the following relations with Team: &quot;Sponsors&quot; and the inverse relation &quot;Sponsored_By&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rider -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rider">
+        <rdfs:comment>Rider Class with cyclists from 2019.
+Has three subclasses that are based on which type of team a rider is in.
+Contains the properties: UCI_rank, Height, GivenName, Nationality, CyclistGenre, ProTeam, Surname, BirthDate, BirthPlace and Weight.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Sponsor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Sponsor"/>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Team -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Team">
+        <rdfs:comment>Team class that contains teams from 2019.
+Contains properties: Status, UCI_code and Bike.
+Subclasses are the UCI Women (UCI)(not used in data set), UCI Continental (CT), UCI Professional Continental (PCT) and UCI WorldTeam (WT).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#UCI_Continental -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#UCI_Continental">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Team"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Status"/>
+                        <owl:hasValue>CT (2019)</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Team"/>
+        <rdfs:comment>UCI Continental is a subclass of the Team Class, where a Team has the Status &quot;CT&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#UCI_Continental_Rider -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#UCI_Continental_Rider">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rider"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rides_For"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#UCI_Continental"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rider"/>
+        <rdfs:comment>Subclass of the Rider class, for riders that are part of a UCI Continental team.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#UCI_Professional_Continental -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#UCI_Professional_Continental">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Team"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Status"/>
+                        <owl:hasValue>PCT (2019)</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Team"/>
+        <rdfs:comment>UCI Professional Continental is a subclass of the Team Class, where a Team has the Status &quot;PCT&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#UCI_Professional_Continental_Rider -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#UCI_Professional_Continental_Rider">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rider"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rides_For"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#UCI_Professional_Continental"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rider"/>
+        <rdfs:comment>Subclass of the Rider class, for riders that are part of a UCI Proffesional Continental team.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#UCI_WorldTeam -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#UCI_WorldTeam">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Team"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Status"/>
+                        <owl:hasValue>WT (2019)</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Team"/>
+        <rdfs:comment>UCI WorldTeam is a subclass of the Team Class, where a Team has the Status &quot;WT&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#UCI_WorldTeam_Rider -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#UCI_WorldTeam_Rider">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rider"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rides_For"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#UCI_WorldTeam"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bertelt/ontologies/2019/8/cyclistDB#Rider"/>
+        <rdfs:comment>Subclass of the Rider class, for riders that are part of a UCI WorldTeam.</rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
